@@ -335,6 +335,11 @@ public class TodoService extends ServiceImpl<TodoMapper, TodoEntity> {
         if (req.getCurTodoId().equals(req.getTodoId())) {
             throw new XzException400("转移日期与原日期不能相同");
         }
+
+        Date curDate = DateUtil.parse(req.getCurTodoId());
+        Date targetDate = DateUtil.parse(req.getTodoId());
+        long offsetDays = (targetDate.getTime() - curDate.getTime()) / (1000 * 60 * 60 * 24);
+
         TodoEntity query = new TodoEntity();
         query.setIds(req.getTaskIds());
         query.setUserId(AuthContext.getUserId());
@@ -344,6 +349,14 @@ public class TodoService extends ServiceImpl<TodoMapper, TodoEntity> {
             if (task.getTodoId().equals(req.getTodoId())) {
                 continue;
             }
+
+            if (task.getStartTime() != null) {
+                task.setStartTime(DateUtil.offsetDay(task.getStartTime(), (int) offsetDays));
+            }
+            if (task.getEndTime() != null) {
+                task.setEndTime(DateUtil.offsetDay(task.getEndTime(), (int) offsetDays));
+            }
+
             task.setId(null);
             task.setTodoId(req.getTodoId());
             task.setTodoName(req.getTodoId());

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blossom.backend.base.cron.CronMapper">
+    <select id="getNoticePlan" resultType="com.blossom.backend.server.plan.pojo.PlanEntity">
+        SELECT *
+        FROM blossom_plan
+        WHERE plan_date = CURDATE()
+          AND plan_start_time >= DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 10 MINUTE), '%H:%i')
+          AND plan_start_time &lt; DATE_FORMAT(DATE_ADD(NOW(), INTERVAL 15 MINUTE), '%H:%i');
+    </select>
+    <select id="getNoticeTodo" resultType="com.blossom.backend.server.todo.pojo.TodoEntity">
+        SELECT *
+        FROM blossom_todo
+        WHERE todo_id = DATE_FORMAT(NOW(), '%Y-%m-%d')
+          AND task_status != 'COMPLETED'
+          AND start_time &lt; DATE_ADD(NOW(), INTERVAL 35 MINUTE)
+          AND start_time >= DATE_ADD(NOW(), INTERVAL 1 MINUTE)
+    </select>
+</mapper>

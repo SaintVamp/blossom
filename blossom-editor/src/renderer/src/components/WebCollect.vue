@@ -170,7 +170,7 @@ const showWebCollectCard = (card: boolean) => {
 <style scoped lang="scss">
 .web-collect-root {
   @include box(100%, 100%);
-  @include themeColor(#bdbdbd, #a3a6ad);
+  @include themeColor(#160819, #7992cf);
 
   .iconbl {
     transition: color 0.3s;
@@ -227,7 +227,7 @@ const showWebCollectCard = (card: boolean) => {
   }
 
   .web-collect-group {
-    @include themeColor(#bdbdbd, #a3a6ad);
+    @include themeColor(#af2323, #7992cf);
     @include font(14px, 300);
     text-shadow: var(--bl-text-shadow);
     padding: 5px 20px;
@@ -293,7 +293,7 @@ const showWebCollectCard = (card: boolean) => {
 
     .web-name {
       @include box(100%, 32px);
-      @include themeColor(#a5a5a5, #929292);
+      @include themeColor(#303f4a, #a9e3ac);
       text-shadow: var(--bl-text-shadow);
       text-align: center;
       font-size: 11px;

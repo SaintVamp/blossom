@@ -63,7 +63,14 @@
             <artifactId>java-jwt</artifactId>
             <version>${java-jwt.version}</version>
         </dependency>
-
+	
+        <!-- 邮件处理 -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+	</dependency>
+	
         <!-- 图片处理 -->
         <dependency>
             <groupId>net.coobird</groupId>

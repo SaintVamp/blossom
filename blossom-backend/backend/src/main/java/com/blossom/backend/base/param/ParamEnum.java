@@ -88,6 +88,71 @@ public enum ParamEnum {
      * 过期时间 - 数据库
      */
     SERVER_DATABASE_EXPIRE(false, 0,""),
+
+    /**
+     * 开启企业微信通知
+     */
+    NOTICE_WORK_ENABLED(false, 5,""),
+
+    /**
+     * 开启邮箱通知
+     */
+    NOTICE_EMAIL_ENABLED(false, 5,""),
+
+    /**
+     * 开启IYUU通知
+     */
+    NOTICE_IYUU_ENABLED(false, 5,""),
+
+    /**
+     * IYUU密钥
+     */
+    NOTICE_IYUU_TOKEN(false, 0,""),
+
+    /**
+     * 邮件密码
+     */
+    NOTICE_EMAIL_SMTP_PWD(false, 0,""),
+
+    /**
+     * 邮件用户名
+     */
+    NOTICE_EMAIL_SMTP_USER(false, 0,""),
+
+    /**
+     * 邮件服务器
+     */
+    NOTICE_EMAIL_SMTP_SERVER(false, 0,""),
+
+    /**
+     * 企微手机号
+     */
+    NOTICE_WORK_MOBILE(false, 0,""),
+
+    /**
+     * 企微用户ID
+     */
+    NOTICE_WORK_USER_ID(false, 0,""),
+
+    /**
+     * 企微代理ID
+     */
+    NOTICE_WORK_AGENT_ID(false, 0,""),
+
+    /**
+     * 企微公司ID
+     */
+    NOTICE_WORK_CORP_ID(false, 0,""),
+
+    /**
+     * 企微公司密钥
+     */
+    NOTICE_WORK_CORP_SECRET(false, 0,""),
+
+    /**
+     * 企微TOKEN
+     */
+    NOTICE_WORK_TOKEN(false, 0,""),
     ;
 
     /**

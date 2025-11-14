@@ -40,11 +40,11 @@ maven package
 ```
 
 ```shell
-docker build -t jasminexzzz/blossom:dev -f Dockerfile .
+docker build -t saintvamp/blossom:dev -f Dockerfile .
 ```
 
 等待编译完成后，
-通过 `docker images` 可以查看到存在镜像 `jasminexzzz/blossom:dev`
+通过 `docker images` 可以查看到存在镜像 `saintvamp/blossom:dev`
 
 ### 本地开发
 
@@ -57,7 +57,7 @@ docker build -t jasminexzzz/blossom:dev -f Dockerfile .
 3. 配置如下参数
    - 服务器目录：本地的`Docker for Windows`
    - Dockerfile: blossom-backend\Dockerfile
-   - 镜像标记：jasminexzzz/blossom:dev
+   - 镜像标记：saintvamp/blossom:dev
 4. 添加执行前操作: 添加 运行Maven目标，配置命令 `clean package`，确认
 5. 确定保存
 

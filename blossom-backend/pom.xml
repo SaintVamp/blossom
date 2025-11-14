@@ -33,7 +33,7 @@
         <spring-boot.version>2.7.18</spring-boot.version>
 
         <!-- 其他三方包版本 -->
-        <lombok.version>1.18.8</lombok.version>
+        <lombok.version>1.18.30</lombok.version>
         <!--
         BOM 在 dependencyManagement 中指定依赖版本
         -->

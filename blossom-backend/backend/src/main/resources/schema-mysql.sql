@@ -234,6 +234,174 @@ WHERE NOT EXISTS(SELECT 1
                  FROM base_sys_param
                  WHERE id = 101);
 
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 301                        as id,
+             'NOTICE_WORK_ENABLED'      as param_name,
+             0                          as param_value,
+             '企业微信通知开关'            as param_desc,
+             1                          as open_state,
+             CURRENT_TIMESTAMP          as cre_time,
+             CURRENT_TIMESTAMP          as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 301);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 302                        as id,
+             'NOTICE_WORK_CORP_SECRET'  as param_name,
+             ''                         as param_value,
+             '企微公司密钥'               as param_desc,
+             1                          as open_state,
+             CURRENT_TIMESTAMP          as cre_time,
+             CURRENT_TIMESTAMP          as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 302);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 303                     as id,
+             'NOTICE_WORK_AGENT_ID'  as param_name,
+             ''                      as param_value,
+             '企微代理ID'             as param_desc,
+             1                       as open_state,
+             CURRENT_TIMESTAMP       as cre_time,
+             CURRENT_TIMESTAMP       as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 303);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 304                    as id,
+             'NOTICE_WORK_USER_ID'  as param_name,
+             ''                     as param_value,
+             '企微用户ID'            as param_desc,
+             1                      as open_state,
+             CURRENT_TIMESTAMP      as cre_time,
+             CURRENT_TIMESTAMP      as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 304);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 305                   as id,
+             'NOTICE_WORK_MOBILE'  as param_name,
+             ''                    as param_value,
+             '企微手机号'            as param_desc,
+             1                     as open_state,
+             CURRENT_TIMESTAMP     as cre_time,
+             CURRENT_TIMESTAMP     as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 305);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 306                    as id,
+             'NOTICE_WORK_CORP_ID'  as param_name,
+             ''                     as param_value,
+             '企微公司ID'            as param_desc,
+             1                      as open_state,
+             CURRENT_TIMESTAMP      as cre_time,
+             CURRENT_TIMESTAMP      as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 306);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 307                   as id,
+             'NOTICE_WORK_TOKEN'   as param_name,
+             ''                    as param_value,
+             '企微TOKEN'            as param_desc,
+             1                     as open_state,
+             CURRENT_TIMESTAMP     as cre_time,
+             CURRENT_TIMESTAMP     as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 307);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 308                        as id,
+             'NOTICE_EMAIL_ENABLED'     as param_name,
+             0                          as param_value,
+             '邮箱通知开关'               as param_desc,
+             1                          as open_state,
+             CURRENT_TIMESTAMP          as cre_time,
+             CURRENT_TIMESTAMP          as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 308);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 309                   as id,
+             'NOTICE_EMAIL_SMTP_SERVER'  as param_name,
+             ''                    as param_value,
+             '邮件服务器'            as param_desc,
+             1                     as open_state,
+             CURRENT_TIMESTAMP     as cre_time,
+             CURRENT_TIMESTAMP     as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 309);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 310                   as id,
+             'NOTICE_EMAIL_SMTP_USER'  as param_name,
+             ''                    as param_value,
+             '邮件用户名'            as param_desc,
+             1                     as open_state,
+             CURRENT_TIMESTAMP     as cre_time,
+             CURRENT_TIMESTAMP     as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 310);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 311                   as id,
+             'NOTICE_EMAIL_SMTP_PWD'  as param_name,
+             ''                    as param_value,
+             '邮件密码'            as param_desc,
+             1                     as open_state,
+             CURRENT_TIMESTAMP     as cre_time,
+             CURRENT_TIMESTAMP     as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 311);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 312                        as id,
+             'NOTICE_IYUU_ENABLED'      as param_name,
+             0                          as param_value,
+             'IYUU通知开关'            as param_desc,
+             1                          as open_state,
+             CURRENT_TIMESTAMP          as cre_time,
+             CURRENT_TIMESTAMP          as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 312);
+
+INSERT INTO base_sys_param (id, param_name, param_value, param_desc, open_state, cre_time, upd_time)
+SELECT *
+FROM (select 313                        as id,
+             'NOTICE_IYUU_TOKEN'  as param_name,
+             ''                         as param_value,
+             'IYUU密钥'                  as param_desc,
+             1                          as open_state,
+             CURRENT_TIMESTAMP          as cre_time,
+             CURRENT_TIMESTAMP          as upd_time) as temp
+WHERE NOT EXISTS(SELECT 1
+                 FROM base_sys_param
+                 WHERE id = 313);
 -- ----------------------------
 -- Table structure for base_user
 -- ----------------------------

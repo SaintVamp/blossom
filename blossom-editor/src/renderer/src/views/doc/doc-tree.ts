@@ -80,8 +80,8 @@ export const handleTreeDrop = (
       if (dragSourceSort > enterSourceSort) {
         drag.data.s = enterSourceSort
         addUpd(drag)
-        for (let i = 0; i < enter.parent.childNodes.length; i++) {
-          const node = enter.parent.childNodes[i]
+        for (let i = 0; i < enter.parent!.childNodes.length; i++) {
+          const node = enter.parent!.childNodes[i]
           if (checkFolderType(node, folderType) && node.data.s >= enterSourceSort && node.data.s < dragSourceSort && node.data.i != drag.data.i) {
             node.data.s += 1
             addUpd(node)
@@ -92,8 +92,8 @@ export const handleTreeDrop = (
       else if (isSame) {
         drag.data.s = enterSourceSort - 1
         addUpd(drag)
-        for (let i = 0; i < enter.parent.childNodes.length; i++) {
-          const node = enter.parent.childNodes[i]
+        for (let i = 0; i < enter.parent!.childNodes.length; i++) {
+          const node = enter.parent!.childNodes[i]
           if (checkFolderType(node, folderType) && node.data.s < enterSourceSort && node.data.s > dragSourceSort && node.data.i != drag.data.i) {
             node.data.s -= 1
             addUpd(node)
@@ -108,8 +108,8 @@ export const handleTreeDrop = (
       if (dragSourceSort > enterSourceSort) {
         drag.data.s = enterSourceSort + 1
         addUpd(drag)
-        for (let i = 0; i < enter.parent.childNodes.length; i++) {
-          const node = enter.parent.childNodes[i]
+        for (let i = 0; i < enter.parent!.childNodes.length; i++) {
+          const node = enter.parent!.childNodes[i]
           if (checkFolderType(node, folderType) && node.data.s > enterSourceSort && node.data.s < dragSourceSort && node.data.i != drag.data.i) {
             node.data.s += 1
             addUpd(node)
@@ -118,8 +118,8 @@ export const handleTreeDrop = (
       } else {
         drag.data.s = enterSourceSort
         addUpd(drag)
-        for (let i = 0; i < enter.parent.childNodes.length; i++) {
-          const node = enter.parent.childNodes[i]
+        for (let i = 0; i < enter.parent!.childNodes.length; i++) {
+          const node = enter.parent!.childNodes[i]
           if (checkFolderType(node, folderType) && node.data.s <= enterSourceSort && node.data.s > dragSourceSort && node.data.i != drag.data.i) {
             node.data.s -= 1
             addUpd(node)
@@ -188,8 +188,8 @@ export const handleTreeDrop = (
       // 拖拽的文件夹需修改
       addUpd(drag)
       //
-      for (let i = 0; i < enter.parent.childNodes.length; i++) {
-        const node = enter.parent.childNodes[i]
+      for (let i = 0; i < enter.parent!.childNodes.length; i++) {
+        const node = enter.parent!.childNodes[i]
         if (checkFolderType(node, folderType) && node.data.s >= enterSourceSort && node.data.i != drag.data.i) {
           node.data.s += 1
           addUpd(node)
@@ -201,8 +201,8 @@ export const handleTreeDrop = (
       drag.data.p = enter.data.p
       drag.data.s = enterSourceSort + 1
       addUpd(drag)
-      for (let i = 0; i < enter.parent.childNodes.length; i++) {
-        const node = enter.parent.childNodes[i]
+      for (let i = 0; i < enter.parent!.childNodes.length; i++) {
+        const node = enter.parent!.childNodes[i]
         if (checkFolderType(node, folderType) && node.data.s > enterSourceSort && node.data.i != drag.data.i) {
           node.data.s += 1
           addUpd(node)
