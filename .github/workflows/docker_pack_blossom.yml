@@ -40,7 +40,9 @@ jobs:
         mvn clean
         mvn package
         cd ..
+        ls -al
         release_tag="$(date +%Y%m%d%k%M%S)"
+        echo "release_tag=$release_tag"
         docker build -t saintvamp/blossom:{release_tag} -f docker/build/Dockerfile .
         docker push saintvamp/blossom:{release_tag}
         docker build -t saintvamp/blossom:latest -f docker/build/Dockerfile .
