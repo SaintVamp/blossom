@@ -40,12 +40,29 @@ jobs:
         mvn clean
         mvn package
         cd ..
-        ls -al
         release_tag="$(date +%Y%m%d%k%M%S)"
-        echo "release_tag=$release_tag"
-        docker build -t saintvamp/blossom:{release_tag} -f docker/build/Dockerfile .
-        docker push saintvamp/blossom:{release_tag}
-        docker build -t saintvamp/blossom:latest -f docker/build/Dockerfile .
-        docker push saintvamp/blossom:latest
+        echo "release_tag=$release_tag" >> $GITHUB_ENV
 
+    - name: Set Up QEMU
+      uses: docker/setup-qemu-action@v3
 
+    - name: Set Up Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./configs/Dockerfile
+        platforms: linux/amd64,linux/arm64
+        push: true
+        tags: saintvamp/blossom:${{ env.release_tag }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./configs/Dockerfile
+        platforms: linux/amd64,linux/arm64
+        push: true
+        tags: saintvamp/blossom:latest
