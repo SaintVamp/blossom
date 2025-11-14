@@ -1,11 +1,11 @@
-name: docker_package_python3
+name: docker_pack
 on:
 #  schedule:
 #    - cron: "0 17 * * *"
   workflow_dispatch:
   push:
     branches:
-      - master
+      - dev
 
 jobs:
   build:
@@ -27,8 +27,26 @@ jobs:
       run: |
         mv "${GITHUB_WORKSPACE}/resource/python3.11" "${GITHUB_WORKSPACE}/configs/Dockerfile"
         cd "${GITHUB_WORKSPACE}/configs/"
-        docker build -t saintvamp/python3:1.0 .
-        docker push saintvamp/python3:1.0
-        docker build -t saintvamp/python3:latest .
-        docker push saintvamp/python3:latest
+        cd "${GITHUB_WORKSPACE}"
+        cd blossom-backend/backend/src/main/resources/static/editor
+        rm -rf assets/
+        rm favicon.png
+        rm index.html
+        cd ../../../../../../../blossom-editor
+        npm install
+        npm run build
+        cp -r out/renderer/assets/ ../blossom-backend/backend/src/main/resources/static/editor/
+        cp out/renderer/favicon.png ../blossom-backend/backend/src/main/resources/static/editor/
+        cp out/renderer/index.html ../blossom-backend/backend/src/main/resources/static/editor/
+        cd ../blossom-web
+        npm install
+        npm run build:spring
+        cd ../blossom-backend
+        mvn clean
+        mvn package
+        cd ..
+        docker rmi saintvamp/blossom:latest
+        docker build -t saintvamp/blossom:latest -f docker/build/Dockerfile .
+        docker push saintvamp/blossom:latest
+
 
