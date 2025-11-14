@@ -40,7 +40,6 @@ jobs:
         mvn clean
         mvn package
         cd ..
-        docker rmi saintvamp/blossom:latest
         docker build -t saintvamp/blossom:latest -f docker/build/Dockerfile .
         docker push saintvamp/blossom:latest
 
