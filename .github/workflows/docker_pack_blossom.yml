@@ -25,7 +25,6 @@ jobs:
 
     - name: Build docker
       run: |
-        cd "${GITHUB_WORKSPACE}/configs/"
         cd "${GITHUB_WORKSPACE}"
         cd blossom-backend/backend/src/main/resources/static/editor
         rm -rf assets/
