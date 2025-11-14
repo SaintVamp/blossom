@@ -27,9 +27,6 @@ jobs:
       run: |
         cd "${GITHUB_WORKSPACE}"
         cd blossom-backend/backend/src/main/resources/static/editor
-        rm -rf assets/
-        rm favicon.png
-        rm index.html
         cd ../../../../../../../blossom-editor
         npm install
         npm run build
