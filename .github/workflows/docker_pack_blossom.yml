@@ -25,7 +25,6 @@ jobs:
 
     - name: Build docker
       run: |
-        mv "${GITHUB_WORKSPACE}/resource/python3.11" "${GITHUB_WORKSPACE}/configs/Dockerfile"
         cd "${GITHUB_WORKSPACE}/configs/"
         cd "${GITHUB_WORKSPACE}"
         cd blossom-backend/backend/src/main/resources/static/editor
